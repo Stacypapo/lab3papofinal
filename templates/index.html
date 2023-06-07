@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Лабораторная 2</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+
+    form .form-group {
+      margin-bottom: 20px;
+    }
+
+    form label {
+      font-weight: bold;
+    }
+
+    form .btn-primary {
+      border-radius: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Решите капчу, чтобы продолжить!</h1>
+  <form method="POST" action="/">
+    {{ form.hidden_tag() }}
+    {{ form.recaptcha() }}
+    {{ form.submit(class="btn btn-primary") }}
+  </form>
+</body>
+</html>

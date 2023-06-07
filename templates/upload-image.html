@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Загрузка изображения</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+
+    form .form-group {
+      margin-bottom: 20px;
+    }
+
+    form label {
+      font-weight: bold;
+    }
+
+    form .btn-primary {
+      border-radius: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Загрузите изображение</h1>
+  <form method="POST" enctype="multipart/form-data" action="/image/upload">
+    <div class="form-group">
+      <label for="image">Выберите изображения:</label>
+      <input type="file" name="image1" class="form-control-file">
+      <input type="file" name="image2" class="form-control-file">
+    </div>
+    <div class="form-group">
+      <label for="{{ form.glue_direction.id }}">Направление склейки:</label>
+      {{ form.glue_direction(class="form-control") }}
+    </div>
+    <input type="submit" value="Загрузить" class="btn btn-primary">
+  </form>
+</body>
+</html>
